@@ -33,3 +33,8 @@ You should now have an HTTP status server running at <http://localhost:14501>.
 # shutdown
 docker compose down
 ```
+
+# Changes
+* KE5KUL - Updated CMD for Dockerfile
+* KE5KUL - Added working_dir to docker-compose.yaml
+* KE5KUL - Added hostnames/network to docker-compose.yaml for integration with trackdirect container.

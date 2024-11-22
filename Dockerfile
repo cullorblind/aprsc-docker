@@ -17,4 +17,4 @@ RUN gpg --keyserver keyserver.ubuntu.com --recv-keys C51AA22389B5B74C3896EF3CA72
 RUN usermod -u 1000 aprsc
 
 # start the service and follow the logs so that container doesn't exit
-CMD service aprsc start && tail -F /opt/aprsc/logs/aprsc.log
+CMD /opt/aprsc/sbin/aprsc -u aprsc -e info -o stderr -r logs -c etc/aprsc.conf
