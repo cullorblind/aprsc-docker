@@ -1,5 +1,5 @@
-# debian 11 is the most recent debian version that aprsc supports
-FROM debian:bullseye-slim
+# debian 12 is the most recent debian version that aprsc supports
+FROM debian:bookworm-slim
 
 # Install requirements
 RUN apt-get update && apt-get install -y gnupg
@@ -16,5 +16,5 @@ RUN gpg --keyserver keyserver.ubuntu.com --recv-keys C51AA22389B5B74C3896EF3CA72
 # between the first non-root user on the host
 RUN usermod -u 1000 aprsc
 
-# start the service and follow the logs so that container doesn't exit
+# start aprsc as the user aprsc with informational logging and output to stderr.
 CMD /opt/aprsc/sbin/aprsc -u aprsc -e info -o stderr -r logs -c etc/aprsc.conf
